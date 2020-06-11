@@ -9,6 +9,6 @@ Run Game
 
 Press C to Start
 
-Press Q or Esc or X in top right window to quit
+Press Q or Esc or X in top right window to Quit
 
-Control Spaceship with mouse
+Control Spaceship with Mouse
