@@ -121,7 +121,7 @@ block_list = pygame.sprite.Group()
 #list of every sprite - all cats and the player
 all_sprites_list = pygame.sprite.Group()
 
-#sets number of cats/dogs on the screen
+#sets number of cats on the screen
 for i in range(20):
     #sets attributes of cats i.e self, width, height
     block = Block(cat1, 20, 15)
@@ -201,16 +201,3 @@ def game_loop():
 
 game_intro()
 game_loop()
-
-
-"""
-TDL
-
-different images for sprites - separate classes for each image that calls block like player?
-
-cat2 = pygame.image.load('Asset 3.png')
-cat3 = pygame.image.load('Asset 4.png')
-dog1 = pygame.image.load('Asset 1.png')
-dog2 = pygame.image.load('Asset 5.png')
-cat4 = pygame.image.load('Asset 6.png')
-"""
