@@ -12,8 +12,8 @@ font_name = pygame.font.match_font('avant garde')
 
 #adds images for player and cats
 alienImg = pygame.image.load('hank.png')
-background = pygame.image.load('skyback.jpg')
-cat1 = pygame.image.load('Asset 2.png')
+background = pygame.image.load('sky.jpg')
+cat1 = pygame.image.load('cat.png')
 
 #sets the height and width of the screen
 screen_width =  800 
