@@ -33,7 +33,7 @@ class Block(pygame.sprite.Sprite):
         if self.rect.y > 610:
             self.reset_pos()
 
-#defines the player - uses block class as a foundation to work from but overides the 'update' function with a movement function to follow mouse
+#defines the player - uses block class as a foundation to work from but overrides the 'update' function with a movement function to follow mouse
 class Player(Block):
     #sets how player updates itself
     def update(self):
@@ -174,9 +174,9 @@ def game_loop():
         #see if the player has collided with anything (collected any cats) and create list of collisions
         blocks_hit_list = pygame.sprite.spritecollide(player, block_list, False)
 
-        #check the list of collisons
+        #check the list of collisions
         for block in blocks_hit_list:
-            #check the list of collisons and update the score
+            #check the list of collisions and update the score
             score += 1
             #print(score)
 
@@ -186,7 +186,7 @@ def game_loop():
         #draw all the sprites (cats and player)
         all_sprites_list.draw(screen)
 
-        #show score coutner in pygame window
+        #show score counter in pygame window
         draw_text(screen, "Kittens Saved", 25, 70, 480)
         draw_text(screen, str(score), 40, 65, 525)
 
@@ -206,7 +206,7 @@ game_loop()
 """
 TDL
 
-different images for sprites - seperate classes for each image that calls block like player?
+different images for sprites - separate classes for each image that calls block like player?
 
 cat2 = pygame.image.load('Asset 3.png')
 cat3 = pygame.image.load('Asset 4.png')
