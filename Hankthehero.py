@@ -1,7 +1,39 @@
+###########################################################################
+# Settings
+###########################################################################
+
 #import necessary modules
 import pygame
 import random
 from pygame import mixer
+
+#finds local font that matches 'avant garde'
+font_name = pygame.font.match_font('avant garde')
+
+#adds images for player and cats
+alienImg = pygame.image.load('hank.png')
+background = pygame.image.load('skyback.jpg')
+cat1 = pygame.image.load('Asset 2.png')
+
+#sets the height and width of the screen
+screen_width =  800 
+screen_height = 600 
+
+#sets screen variable for quicker reference
+screen = pygame.display.set_mode([screen_width, screen_height])
+
+#list of sprites - only the cats and not the player
+block_list = pygame.sprite.Group()
+
+#list of every sprite - all cats and the player
+all_sprites_list = pygame.sprite.Group()
+
+#to manage how fast the screen updates
+clock = pygame.time.Clock()
+
+###########################################################################
+# Hank & Cats
+###########################################################################
 
 #defines the cats[and player - see class player comments] - uses sprite class in pygame to create
 class Block(pygame.sprite.Sprite):
@@ -47,11 +79,50 @@ class Player(Block):
         #set image for player
         self.image = alienImg
 
-#open pygame
+###########################################################################
+# Game Set Up
+###########################################################################
+
+#initialize pygame
 pygame.init()
 
-#finds local font that matches 'avant garde'
-font_name = pygame.font.match_font('avant garde')
+#sets name of game in pygame window
+pygame.display.set_caption('Hank the Hero')
+
+#sets attributes of player i,e self, width, height
+player = Player(alienImg, 20, 15)
+
+#adds the player to the all_sprites_list only
+all_sprites_list.add(player)
+
+#sets number of cats on the screen
+for i in range(20):
+    #sets attributes of cats i.e self, width, height
+    block = Block(cat1, 20, 15)
+
+    #sets a random location for the cats
+    block.rect.x = random.randrange(screen_width)
+    block.rect.y = random.randrange(screen_height)
+
+    #adds the cats to both lists
+    block_list.add(block)
+    all_sprites_list.add(block)
+
+#push screen to display
+screen.blit(background, (0,0))
+
+###########################################################################
+# Music
+###########################################################################
+
+#adds background music
+mixer.music.load('Blazer_Rail.mp3')
+#loops music
+mixer.music.play(-1)
+
+###########################################################################
+# Score Counter
+###########################################################################
 
 #defines how to draw text to use for score counter
 def draw_text(surf, text, size, x, y):
@@ -65,6 +136,10 @@ def draw_text(surf, text, size, x, y):
     text_rect.midtop = (x , y)
     #push to screen display
     surf.blit(text_surface, text_rect)
+
+###########################################################################
+# Game Intro Page
+###########################################################################
 
 #sets game intro
 def game_intro():
@@ -92,58 +167,10 @@ def game_intro():
         #updates screen display
         pygame.display.update()
 
-#adds background music
-mixer.music.load('Blazer_Rail.mp3')
-#loops music
-mixer.music.play(-1)
+###########################################################################
+# Game Mechanics
+###########################################################################
 
-#adds images for player and cats
-alienImg = pygame.image.load('aliendave4.png')
-background = pygame.image.load('skyback.jpg')
-cat1 = pygame.image.load('Asset 2.png')
-
-#sets the height and width of the screen
-screen_width =  800 
-screen_height = 600 
-
-#sets screen variable for quicker reference
-screen = pygame.display.set_mode([screen_width, screen_height])
-
-#push screen to display
-screen.blit(background, (0,0))
-
-#sets name of game in pygame window
-pygame.display.set_caption('Hank the Hero')
-
-#list of sprites - only the cats and not the player
-block_list = pygame.sprite.Group()
-
-#list of every sprite - all cats and the player
-all_sprites_list = pygame.sprite.Group()
-
-#sets number of cats on the screen
-for i in range(20):
-    #sets attributes of cats i.e self, width, height
-    block = Block(cat1, 20, 15)
-
-    #sets a random location for the cats
-    block.rect.x = random.randrange(screen_width)
-    block.rect.y = random.randrange(screen_height)
-
-    #adds the cats to both lists
-    block_list.add(block)
-    all_sprites_list.add(block)
-
-#sets attributes of player i,e self, width, height
-player = Player(alienImg, 20, 15)
-
-#adds the player to the all_sprites_list only
-all_sprites_list.add(player)
-
-#to manage how fast the screen updates
-clock = pygame.time.Clock()
-
-#main game loop
 def game_loop():
     #starts score at 0
     score = 0
