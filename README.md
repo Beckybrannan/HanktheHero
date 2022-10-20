@@ -1,23 +1,31 @@
-# Hank the Hero
+# :alien: Hank the Hero
+<span style="font-family:Herculanum; font-size:2em;">
 
-Hank the Hero is here to save the day again but he needs your help! 
 
-Control his spaceship with your mouse to save as many kittens as possible!
+Hank the Hero is here to save the day again...
+but he needs your help!
 
-# How to Run
+Control his spaceship with your mouse to save as many kittens as possible! :scream_cat:
 
-Install the latest version of Python from here: https://www.python.org/downloads/releases
+</span>
 
-Install Pygame from here: https://www.pygame.org/download.shtml
+## :wrench: Set up
 
-Clone this repository
+Download the latest versions of:
 
-Open the terminal/command line, navigate to the repo's directory and run Hankthehero.py
+[Python](https://www.python.org/downloads/) &
+[Pygame](https://www.pygame.org/wiki/GettingStarted)
 
-# Controls
+Clone the main branch of this repo
+
+Open it in your preferred IDE
+
+Run Hankthehero.py
+
+## :video_game: Controls
 
 Press C to Start
 
 Control Spaceship with Mouse
 
-Press Q or Esc or X in top right window to Quit
+Press Q or Esc or close window to Quit
