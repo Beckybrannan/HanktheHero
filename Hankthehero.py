@@ -11,9 +11,9 @@ from pygame import mixer
 font_name = pygame.font.match_font('avant garde')
 
 #adds images for player and cats
-alienImg = pygame.image.load('hank.png')
-background = pygame.image.load('sky.jpg')
-cat1 = pygame.image.load('cat.png')
+alienImg = pygame.image.load('assets/images/hank.png')
+background = pygame.image.load('assets/images/sky.jpg')
+cat1 = pygame.image.load('assets/images/cat.png')
 
 #sets the height and width of the screen
 screen_width =  800 
@@ -116,7 +116,7 @@ screen.blit(background, (0,0))
 ###########################################################################
 
 #adds background music
-mixer.music.load('Blazer_Rail.mp3')
+mixer.music.load('assets/music/Blazer_Rail.mp3')
 #loops music
 mixer.music.play(-1)
 
